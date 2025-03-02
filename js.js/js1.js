@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const closePopupButton = document.getElementById("close-popup-button");
     const contactForm = document.getElementById("contact-form");
     const wrapper = document.querySelector('.wrapper');
-	  const selectedCount= document.querySelector('.selected-count')
+    const selectedCount= document.querySelector('.selected-count')
     const searchSection = document.querySelector('.search-section');
     const searchHeader = document.querySelector('.search-header');
     const contactHeaderFlex = document.querySelector('.contact-header-flex');
