@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Contact Manager</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <script src="js/code.js"></script>
+</head>
+<header>
+    <div class="buttons">
+        <a class="button" onclick="doLogout();">Logout</a>
+    </div>
+</header>
+<body onload="populateContactsTable('','','','');">
+    <div class="dashboard-container">
+        <h2>Welcome, <span id="username">Username</span></h2>
+        <div class="buttons">
+            <input type="text" id="search-input" class="search-bar" placeholder="Search Contacts...">
+            <button class="button" id="search-btn" onclick="searchContact();">Search</button>
+            <button class="button" id="ashow-overlay-btn">Add Contact</button>
+        </div>
+        <!--Display Contacts for a given user-->
+        <div class="contacts-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="contacts-table-tbody">
+                    <!--Display a list of contacts-->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!--edit overlay-->
+    <div class="overlay" id="eoverlay">
+        <div class="edit contact-container">
+            <h2>Edit Contact</h2>
+            <form class="edit-contact-form">
+                <label for="firstName">First name:</label>
+                <input type="text" id="edit-firstName" name="edit-firstName" required>
+
+                <label for="lastName">Last name:</label>
+                <input type="text" id="edit-lastName" name="edit-lastName" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="edit-email" name="edit-email" required>
+
+                <label for="phone">Phone:</label>
+                <input type="tel" id="edit-phone" name="edit-phone" required>
+
+                <button type="button" id="confirm-edit" onclick="updateContact();">Save</button>
+            </form>
+            <div class="bottom-text">
+                <a href="#" id="ecancel-btn">Cancel</a>
+            </div>
+        </div>
+    </div>
+    <!--add contact overlay-->
+    <div class="overlay" id="aoverlay">
+        <div class="add contact-container">
+            <h2>Add Contact</h2>
+            <form class="add-contact-form">
+                <label for="firstName">First name:</label>
+                <input type="text" id="add-firstName" name="add-firstName" required>
+
+                <label for="lastName">Last name:</label>
+                <input type="text" id="add-lastName" name="add-lastName" required>
+
+                 <label for="email">Email:</label>
+                <input type="email" id="add-email" name="add-email" required>
+
+                <label for="phone">Phone:</label>
+                <input type="tel" id="add-phone" name="add-phone" required>
+
+                <!--Once the form is filled in call the addContact function-->
+                <button type="button" onclick="addContact();">Add</button>
+            </form>
+            <div class="bottom-text">
+                <a href="#" id="acancel-btn">Cancel</a>
+            </div>
+        </div>
+    </div>
+    <!--delete contact overlay-->
+    <div class="overlay" id="doverlay">
+       <div class="delete contact-container">
+            <h2>Are You Sure You Want to Delete?</h2>
+            <!--Delete-->
+            <form >
+                <button type="button" id="confirm-delete">Delete</button>
+            </form>
+            <div class="bottom-text">
+                <a href="#" id="dcancel-btn">Cancel</a>
+            </div>
+       </div> 
+    </div>
+
+    <!-- script to hide/cancel the overlays -->
+    <script>
+        let hidefn = (evt) => {
+        // .closest(".overlay") traverses parents until it finds one
+        // with the overlay class
+        evt.currentTarget.closest(".overlay").classList.remove("active");
+        }
+        //Give the buttons the ability to hide
+        document.getElementById("acancel-btn").addEventListener("click", hidefn);
+        document.getElementById("ecancel-btn").addEventListener("click", hidefn);
+        document.getElementById("dcancel-btn").addEventListener("click", hidefn);
+
+        //Add contact overlay (Since it is singular we only need one)
+        document.getElementById('ashow-overlay-btn').addEventListener('click', () => {
+            aoverlay.classList.add('active');
+        });
+    </script>
+</body>
+</html>
