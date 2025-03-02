@@ -1,0 +1,126 @@
+/*work on adding space for github*/
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    height: 100%;
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    max-width: 400px;
+    width: 100%;
+    background-color: #ffffff;
+    color: #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+header.header {
+    background-color: #6a11cb;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.main {
+    padding: 20px;
+    text-align: center;
+}
+
+.main-header {
+    margin-bottom: 20px;
+    font-size: 1.25rem;
+}
+
+.auth-block {
+    display: block;
+}
+
+.sign-in, .sign-up {
+    display: block;
+}
+
+.sign-in.active, .sign-up.active {
+    display: block;
+}
+
+.form-header {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #6a11cb;
+}
+
+.sign-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: left;
+}
+
+.form-row-text {
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.form-row-input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.submit-btn {
+    padding: 10px 15px;
+    background-color: #6a11cb;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #2575fc;
+}
+
+.form-toggle-text {
+    font-size: 0.85rem;
+    color: #6a11cb;
+}
+
+.toggle-btn {
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+footer.footer {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #2575fc;
+    text-align: center;
+    color: #fff;
+}

@@ -1,0 +1,234 @@
+:root {
+    --main-background: #001d3d;
+    --dark-green: #498766;
+    --btn-color: white;
+    --btn-hover: #3b6d52;
+}
+
+@font-face {
+    font-family: 'RO-Spritendo';
+    src: url('../fonts/RoSpritendoSemiboldBeta-vmVwZ.otf');
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    width: 100%;
+    background-color: var(--main-background);
+}
+
+body {
+    font-size: 20px;
+    /* TODO: find a good font */
+    /* font-family: 'Arial'; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: .02rem;
+}
+
+.sign-up-in {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.side-view {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(270deg,  #7400b8, #e07a5f, #5e60ce, #d90429);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    background-size: 1600% 1600%;
+    animation: gradientAnimation 10s ease infinite;
+}
+
+.side-view-lbl {
+    font-size: 50px;
+    color: white;
+    mix-blend-mode: difference;
+    text-align: left;
+    font-family:'RO-Spritendo';
+    margin-bottom: 10px;
+}
+
+.side-view-lbl-subheader {
+    font-size: 25px;
+    color: white;
+    mix-blend-mode: difference;
+    /* font-family:'RO-Spritendo'; */
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.main-island {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    min-height: 600px;
+    width: 70vw;
+    min-width: 500px;
+    background-color: #edf2f4;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.container {
+    width: 70%;
+    margin: auto;
+}
+
+.main-header {
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 50px;
+}
+
+#un-pw-incorr-lbl {
+    color: red;
+    font-size: 20px;
+    /* stay hidden until incorrect pw or un is entered */
+    display: none; 
+}
+
+
+.form-header {
+    margin-bottom: 40px;
+    font-size: 34px;
+}
+
+.form-row {
+    font-size: 26px;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.form-row-label {
+    margin-right: 5px;
+    position: absolute;
+    left: 15px;
+    top: 60%;
+    transform: translateY(-50%);
+    font-family: Arial;
+    pointer-events: none;
+    font-size: 24px;
+    transition: font-size .3s ease-in-out, 
+        top .3s ease-in-out, 
+        color .3s ease-in-out;
+}
+
+.form-row-input:not(:placeholder-shown) ~ .form-row-label,
+.form-row-input:focus ~ .form-row-label {
+    top: 30%;
+    font-size: 18px;
+    color: var(--dark-green);
+}
+
+.form-row-input {
+    font-size: 24px;
+    border: none;
+    border: 1px solid rgb(100, 100, 100, 30%);
+    box-shadow: 0 0 10px rgb(100, 100, 100, 30%);
+    padding: 35px 15px 15px 15px;
+    width: 100%;
+    border-radius: 10px;
+    outline: none;
+}
+
+.form-error {
+    color: #E60012;
+    margin: 0 0 20px 5px;
+    display: none;
+}
+
+.form-error.active {
+    display: block;
+}
+
+.submit-btn {
+    font-size: 30px;
+    padding: 15px 0;
+    background-color: var(--dark-green);
+    color: white;
+    border: none;
+    margin-bottom: 30px;
+    cursor: pointer;
+    transition: color .3s ease-in-out, background-color .3s ease-in-out;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.submit-btn:hover,
+.submit-btn:active {
+    background-color: var(--btn-hover);
+}
+
+.form-toggle-text {
+    font-size: 24px;
+    margin: 0;
+}
+
+.toggle-btn {
+    color: var(--dark-green);
+    transition: color .3s ease-in-out;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.toggle-btn:hover {
+    color: var(--btn-hover);
+}
+
+.sign-in {
+    display: none;
+    height: 100%;
+    width: 100%;
+    padding: 0 15%;
+    flex-direction: column;
+    height: 100%;
+    align-items: left;
+    justify-content: center;
+}
+
+.sign-up {
+    width: 100%;
+    padding: 0 15%;
+}
+
+.auth-block.sign-in-type .sign-in {
+    display: flex;
+}
+
+.auth-block.sign-in-type .sign-up {
+    display: none;
+    height: 100%;
+}
+
+.auth-block {
+    display: flex;
+    align-items: center;
+}

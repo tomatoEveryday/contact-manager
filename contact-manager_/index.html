@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <link rel="stylesheet" href="assets/styles/style.css"/>
+    <link rel="icon" href="./assets/img/logo.png">
+    <script type="text/javascript" src="assets/scripts/main.js"></script>
+    <script type="text/javascript" src="assets/scripts/md5.js"></script>
+    <script type="text/javascript" src="assets/scripts/api.js"></script>
+    <script type="text/javascript" src="assets/scripts/models/user.js"></script>
+    <title>Log In to ATPF</title>
+</head>
+<body onload="pageLoad();">
+    <div class="main-island">
+        <section class="sign-up-in auth-block sign-in-type"> 
+            <div class="sign-in">
+                <h3 class="form-header">Sign in to your account</h3>
+                <div class="sign-form">
+                    <div class="form-row">
+                        <input placeholder=" " class="form-row-input" type="text" id="sign-in-username" name="username" >
+                        <label class="form-row-label" for="sign-in-username">
+                            Username
+                        </label>
+                    </div>
+                    <div class="form-row">
+                        <input placeholder=" " class="form-row-input" type="password" id="sign-in-password" name="password"> 
+                        <label class="form-row-label" for="sign-in-password">
+                            Password
+                        </label>
+                    </div>
+                    <div class="form-row">
+                        <label id="un-pw-incorr-lbl">Invalid Username or Password</label>
+                    </div>
+                    <button class="submit-btn" type="submit" onclick="signIn();">Sign in</button>
+                </div>
+                <p class="form-toggle-text">Don't have an account? <span class="toggle-btn sign-up-btn" onclick="toggleSignType();">Sign up</span></p>
+            </div>
+            <div class="sign-up">
+                <h3 class="form-header">Create an account</h3>
+                <div class="sign-form">
+                    <div class="form-row">
+                        <input placeholder=" " class="form-row-input" type="text" id="firstname" name="firstname" >
+                        <label class="form-row-label" for="firstname">
+                            First name
+                        </label>
+                    </div>
+                    <p class="form-error" id="errorFirstName">Please enter first name</p>
+                    
+                    <div class="form-row">
+                        <input placeholder=" " class="form-row-input" type="text" id="lastname" name="lastname" >
+                        <label class="form-row-label" for="lastname">
+                            Last name
+                        </label>
+                    </div>
+                    <p class="form-error" id="errorLastName">Please enter last name</p>
+
+                    <div class="form-row">
+                        <input placeholder=" " class="form-row-input" type="text" id="sign-up-username" name="username" >
+                        <label class="form-row-label" for="sign-up-username">
+                            Username
+                        </label>
+                    </div>
+                    <p class="form-error" id="errorUserName">Please enter username</p>
+                    
+                    <div class="form-row">
+                        <input placeholder=" " class="form-row-input" type="password" id="sign-up-password" name="password">
+                        <label class="form-row-label" for="sign-up-password">
+                            Password
+                        </label>
+                    </div>
+                    <p class="form-error" id="errorPassword">Please enter password</p>
+                    <p class="form-error" id="errorTaken">This username already exists</p>
+                    <button class="submit-btn" type="submit" onclick="signUp();">Sign Up</button>
+                </div>
+                <!--<p class="form-toggle-text">Already have an account? <span class="toggle-btn sign-up-btn" onclick="toggleSignType();">Sign up</span></p>-->
+                <p class="form-toggle-text">Already have an account? <span class="toggle-btn sign-up-btn" onclick="toggleSignType();">Sign in</span></p>
+            </div>
+        </section>
+        <div class="side-view">
+            <label class="side-view-lbl">ATPF</label>
+            <label class="side-view-lbl-subheader">A Contact Manager Application</label>
+        </div>
+    </div>
+</body>
+</html>

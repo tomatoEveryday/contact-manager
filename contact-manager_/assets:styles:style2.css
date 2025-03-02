@@ -1,0 +1,688 @@
+
+:root {
+    --main-background: #002B3D; 
+    --header-background: #E60012; 
+    --button-background: #6a0dad; 
+    --button-hover: #9146ff; 
+    --delete-btn: #e74c3c; 
+    --delete-hover: #c0392b; 
+    --contact-card: #a5a2a2;
+}
+
+@font-face {
+    font-family: 'RO-Spritendo';
+    src: url('../fonts/RoSpritendoSemiboldBeta-vmVwZ.otf');
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--main-background);
+    color: black;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    position: relative;
+    padding-bottom: 170px;
+}
+
+.hidden {
+    display: none;
+}
+
+
+.header{
+    display: flex;
+    justify-content: space-between;  /* Spread out logo, welcome, and log out button */
+    align-items: center;  /* Vertically center the items */
+    text-align: center;
+    font-weight: bold;
+    padding: 10px 20px;
+    background: var(--header-background);
+    color: black;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.header-logo {
+    font-family: 'RO-Spritendo', sans-serif;  
+    font-size: 20px;  
+    font-weight: bold;
+    color: white;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.header-center {
+    flex-grow: 1;  
+    text-align: center;
+    margin-left: 70px;
+}
+
+#welcome-header-lbl {
+    margin: 0;
+    font-size: 20px;  
+    font-weight: bold;
+    font-family: 'RO-Spritendo', sans-serif;  
+    color: white;
+}
+
+.profile-img {
+    width: 50%;;
+}
+
+.alt-text {
+    font-size: 10px;
+    margin-top: 5px;
+}
+
+.header-NE {
+    align-items: center;
+}
+
+.header-right {
+    display: flex;
+    font-family: 'RO-Spritendo', sans-serif;  
+    align-items: right; 
+}
+
+.search-container {
+    display: flex;
+    width: 80%;
+    padding: 0 10%;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    align-items: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px !important;
+    background: repeating-linear-gradient(
+  45deg,
+  black,
+  black 10px,
+  rgb(55, 55, 55) 10px,
+  rgb(55, 55, 55) 20px
+);
+}
+
+.searchbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.searchbar input {
+    width: 80%;
+    padding: 15px;
+    font-size: 16px;
+    font-family: 'RO-Spritendo';
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    box-sizing: border-box;
+    height: 50px;
+}
+
+.searchbar .search-btn {
+    /* padding: 15px; */
+    border: none;
+    background-color: #ccc;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    height: 50px;
+    display: block;
+    font-size: 24px;
+}
+
+.add-contact-btn {
+    padding: 15px 30px;
+    background-color: var(--button-background);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.add-contact-btn:hover {
+    background-color: var(--button-hover);
+}
+
+
+.content-area {
+    background-color: #d3d3d3; 
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.form-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; 
+}
+
+.form-group {
+    display: flex;
+    align-items: center; 
+    gap: 10px;
+    width: 100%; 
+    max-width: 400px; 
+}
+
+.form-group label {
+    width: 120px; 
+    font-weight: bold;
+    text-align: right;
+}
+
+.error-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.form-group input {
+    flex: 1; 
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+
+button {
+    padding: 10px 20px;
+    font-family: 'RO-Spritendo';
+    font-size: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.save-btn {
+    background-color: var(--button-background);
+    color: white;
+}
+
+.save-btn:hover {
+    background-color: var(--button-hover);
+}
+
+.cancel-btn {
+    background-color: var(--delete-btn);
+    color: white;
+}
+
+.cancel-btn:hover {
+    background-color: var(--delete-hover);
+}
+
+.delete-btn {
+    background-color: var(--delete-btn);
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: var(--delete-hover);
+}
+
+.edit-btn {
+    background-color: var(--button-background);
+    color: white;
+}
+
+.edit-btn:hover {
+    background-color: var(--button-hover);
+}
+
+.add-contact-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.add-contact-btn {
+    background-color: var(--button-background);
+    transition: 0.5s;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.add-contact-btn:hover {
+    background-color: var(--button-hover);
+    transition: 0.5s;
+}
+
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* padding-top: 25%; */
+    backdrop-filter: blur(10px);
+    z-index: 100;
+}
+
+.popup.shown {
+    display: flex;
+}
+
+
+.popup-block {
+    background-color: red;
+    margin: auto;
+    width: 1000px;
+    min-height: 400px;
+    background-color: white;
+    border-radius: 15px;
+    box-sizing: border-box;
+    padding: 20px 30px;
+    padding-left: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.popup-header {
+    font-size: 30px;
+    font-family: 'RO-Spritendo';
+}
+
+.popup-btns {
+    padding-right: 70px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.popup-bnt {
+    font-size: 24px;
+    padding: 15px 40px;
+}
+
+.popup-btn-cancel {
+    background-color: var(--button-background);
+    color: white;
+    transition: background-color .3s ease-in-out; 
+}
+
+.popup-btn-cancel:hover,
+.popup-bnt-cancel:active {
+    background-color: var(--button-hover);
+}
+
+.popup-btn-confirm {
+    background-color: var(--delete-btn);
+    color: white;
+    transition: background-color .3s ease-in-out; 
+}
+
+.popup-btn-confirm:hover,
+.popup-bnt-confirm:active {
+    background-color: var(--delete-hover);
+}
+
+.popup-right {
+    max-width: 40%;
+}
+
+.delete-popup .popup-img {
+    width: 125%;;
+}
+
+.add-popup .popup-block {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.add-popup .popup-left {
+    flex: 1;
+    max-width: 47%;
+}
+
+.add-popup .popup-right {
+    flex: 1;
+    min-width: 45%;
+}
+
+.form-row {
+    margin-bottom: 15px;
+    font-size: 20px;
+    position: relative;
+}
+
+.form-row:first-child {
+    margin-top: 25px;
+}
+
+.popup-form {
+    margin-bottom: 50px;
+}
+
+.form-row-label {
+    margin-right: 5px;
+    position: absolute;
+    left: 15px;
+    top: 60%;
+    transform: translateY(-50%);
+    font-family: Arial;
+    pointer-events: none;
+    font-size: 18px;
+    transition: font-size .3s ease-in-out, 
+        top .3s ease-in-out, 
+        color .3s ease-in-out;
+}
+
+.form-row-input {
+    font-size: 20px;
+    border: none;
+    border: 1px solid rgb(100, 100, 100, 30%);
+    box-shadow: 0 0 10px rgb(100, 100, 100, 30%);
+    padding: 30px 15px 10px 15px;
+    width: 100%;
+    border-radius: 10px;
+    outline: none;
+}
+
+.form-row-input:not(:placeholder-shown) ~ .form-row-label,
+.form-row-input:focus ~ .form-row-label {
+    top: 30%;
+    font-size: 14px;
+    color: var(--button-background);
+}
+
+.form-error {
+    margin-left: 5px;
+    font-size: 18px;
+    color: var(--header-background);
+    display: none;
+}
+
+.add-popup .popup-btns {
+    padding-right: 0;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 10px;
+    /* background-color: green; */
+}
+
+/* Paging */
+
+.page-control {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 160px;
+    padding: 10px 0px;
+    margin: auto; 
+    /* position: inline; */
+    border-radius: 5px;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+}
+
+.page-control.hidden {
+    /* TODO: auto hide when no results */
+    display: none;
+}
+
+.page-btn {
+    padding: 0;
+    background: none;
+}
+
+.next-page {
+    transform: scaleX(-1);
+}
+
+.page-num {
+    font-size: 34px;
+    padding: 0px 20px 0px 20px;
+    background: none;
+}
+
+.page-btn {
+    cursor: not-allowed;
+}
+
+.page-btn.active {
+    cursor: pointer;
+}
+
+.page-btn svg {
+    fill: #a7a7a7;
+    transition: fill .3s ease-in-out;
+}
+
+.page-btn.active svg {
+    fill: black;
+}
+
+.page-btn.active:hover svg,
+.page-btn.active:active svg {
+    fill: var(--button-hover);
+}
+/* Contact card wrapper - centers everything */
+.contact-card-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+/* 
+#loadedContacts {
+
+} */
+
+#loadedContactsWrapper {
+    overflow-y: scroll;
+    max-height: 85%;
+    height: fill;
+    max-width: 100%;
+    overflow-x: hidden;;
+}
+
+.contact-card-container {
+    background-color: #d3d3d3; 
+    width: 80%; 
+    max-width: 800px; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Individual Contact Card */
+.contact-card {
+    display: flex;
+    align-items: center;
+    /* background-color: var(--contact-card); */
+    background-color: var(--main-background);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    width: 90%; 
+    gap: 15px;
+    transition: 0.5s;
+}
+
+.contact-card input {
+    outline: none;
+    transition: background-color .3s ease-in-out;
+}
+
+.contact-card input:disabled {
+    cursor: not-allowed;
+}
+
+.contact-card input:not(:disabled) {
+    background-color: rgb(255, 255, 255, .9);
+}
+
+.save-btn {
+    display: none;
+}
+
+.contact-card.active .edit-btn {
+    display: none;
+}
+
+.contact-card.active .save-btn {
+    display: block;
+}
+
+.contact-card:hover {
+    box-shadow: rgb(255, 255, 255) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    transition: 0.5s;
+}
+
+.contact-avatar-container {
+    flex-shrink: 0; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--header-background);
+    border-radius:20px;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;    padding: 20px;
+}
+
+/* Avatar image */
+.contact-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+}
+
+/* Contact info section */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 5px;
+}
+
+
+.contact-info .form-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.contact-info label {
+    color: white;
+    font-weight: bold;
+    width: 90px;
+}
+
+
+.contact-info input {
+    flex: 1;
+    padding: 5px;
+    border: none;
+    background-color: #ccc;
+    color: black;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+
+.contact-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.contact-actions button {
+    font-size: 18px;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-btn {
+    background-color: var(--button-background);
+    color: white;
+}
+
+.edit-btn:hover {
+    background-color: var(--button-hover);
+}
+
+.delete-btn {
+    background-color: var(--delete-btn);
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: var(--delete-hover);
+}
+
+
+
+/* Scrollbar style */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--header-background);
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--delete-hover);
+  }
+
+/* edit form */
+
+.edit-form-error {
+    margin: 0;
+    margin-bottom: 5px;
+    font-size: 16px;
+    /* display: block; */
+    /* ? Should we make it more visible for accessibility ? */
+    /* font-weight: bold;
+    text-shadow: 1px 1px 1px black; */
+}
+
+.edit-form-error.active {
+    display: block;
+}
