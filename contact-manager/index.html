@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="register and login web page.">
+    <title>Login-Signup</title>
+
+    <!--fa class styles defined here-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="index.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script defer src="index.js"></script>
+</head>
+
+<body>
+    <header>
+        <a href="https://github.com/ever4Ever11/cop4331_small_project">
+        <i id="git-icon" class="fa fa-github" aria-hidden="true"></i>
+        </a>
+    </header>
+
+    <main>
+    <div class="noflip" id="noflip-container" >
+
+        <form class="login front">
+            <h1>ConnectFor ❆</h1>
+            <div>
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <input type="text"
+                       placeholder="Username"
+                       id="loginUsernameInput"
+                       minlength=5
+                       pattern="\w+"
+                       maxlength=25
+                       required />
+            </div>
+            <div>
+                <i class="fa fa-lock" aria-hidden="true"></i>
+                <input type="password"
+                       placeholder="Password"
+                       id="loginPasswordInput"
+                       minlength=8
+                       pattern="[A-Za-z0-9!@#$%^&*]+"
+                       maxlength=25
+                       required />
+            </div>
+            <button type="button" onclick="if(this.form.reportValidity()){login()}">Login</button>
+            <div class="links">
+                <a href="#" class="toggler">Don't have an account?</a>
+            </div>
+        </form>
+
+        <form class="register back">
+            <div>
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <input type="text" 
+                       placeholder="Username"
+                       id="registerUsernameInput"
+                       minlength=5
+                       pattern="\w+"
+                       maxlength=25
+                       required />
+            </div>
+            <div>
+                <i class="fa fa-address-card" aria-hidden="true"></i>
+                <input type="text" 
+                       placeholder="First Name"
+                       id="registerFirstnameInput"
+                       pattern="[A-Za-z \-]+"
+                       maxlength=25
+                       required />
+            </div>
+            <div>
+                <i class="fa fa-address-card" aria-hidden="true"></i>
+                <input type="text"
+                       placeholder="Last Name"
+                       id="registerLastnameInput"
+                       pattern="[A-Za-z \-]+"
+                       maxlength=25
+                       required />
+            </div>
+            <div>
+                <i class="fa fa-lock" aria-hidden="true"></i>
+                <input type="password" 
+                       placeholder="Password"
+                       id="registerPasswordInput"
+                       minlength=8
+                       pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d$]{8,}$"
+                       maxlength=25
+                       required />
+            </div>
+            <button type="button" onclick="if(this.form.reportValidity()){register()}">Register</button>
+            <div class="links">
+                <a href="#" class="toggler">Login</a>
+            </div>
+        </form>
+    </div>
+    <div id="password-message">
+        <h3>Password must contain:</h3>
+        <p class="password-message-item invalid">At least
+            <b>one lowercase letter</b>
+        </p>
+        <p class="password-message-item invalid">At least
+            <b>one uppercase letter</b>
+        </p>
+        <p class="password-message-item invalid">At least
+            <b>one number</b>
+        </p>
+        <p class="password-message-item invalid">Minimum
+            <b>8 characters</b>
+        </p>
+    </div>
+    </main>
+
+    <footer>
+        Cop4331 - Spring2025 - Team28
+    </footer>
+</body>
+</html>

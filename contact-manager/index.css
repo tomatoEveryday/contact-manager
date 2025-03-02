@@ -1,0 +1,207 @@
+html,
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+html {
+    position: relative;
+    background-image:url('background1.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100vh;
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+}
+
+h1 {
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    color: black;
+}
+
+input {
+    padding: 5px;
+    margin: 15px;
+    width: 50%;
+    padding: 5px;
+    padding-left: 35px;
+    outline: none;
+    border: none;
+    background: none;
+    color: black;
+    border-bottom: 1px solid #444;
+}
+
+button {
+    outline: none;
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    color: #fcfcfc;
+    background: #3c5f6c;
+    border: 1px solid #3c5f6c;
+    border-radius: 5px;
+    width: 100px;
+    height: 30px;
+    margin: 8px;
+    font-weight: bold;
+    transition: all 0.5s ease;
+}
+
+button:hover {
+    cursor: pointer;
+    background: #fcfcfc;
+    color: #3c5f6c;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color:black;
+  }
+
+#git-icon {
+    position: absolute;
+    left: 150px;
+    top: 80px;
+    font-size: 50px;
+    color:#222;
+}
+
+.fa {
+    color: black;
+    position: relative;
+    right: -35px;
+    transition: opacity 2s ease-in-out;
+}
+
+#noflip-container {
+    margin: 0 auto;
+    display: flex;
+    width: 450px;
+    height: 400px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #eef4ed;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 2px solid #222;
+    perspective: 800px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+.flip {
+    transform: rotateY(180deg);
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+.login,
+.register {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.links {
+    display: flex;
+    flex: 1;
+    max-height: 50px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 14px;
+    width: 100%;
+}
+
+.links a {
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+.login .links{
+    padding-top: 20px;
+}
+
+.flip .login .fa {
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
+}
+/*password validation*/
+/* The message box */
+#password-message {
+    display: none;
+    background: #eef4ed;
+    border-radius: 10px;
+    border: 2px solid #222;
+    color: #000;
+    position: relative;
+    padding: 20px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+#password-message h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    margin-top: 0;
+    text-transform: uppercase;
+}
+
+#password-message p {
+    margin: 5px 0;
+}
+.valid {
+    color: green;
+}
+
+.valid:before {
+    position: relative;
+    left: -10px;
+    content: "✔";
+}
+
+.invalid {
+    color: red;
+}
+
+.invalid:before {
+    position: relative;
+    left: -10px;
+    content: "✖";
+}
+
+/* Error message style */
+.error-msg {
+    font-family: Arial, Helvetica, sans-serif;
+    color: red;
+    font-size: 10px;
+    margin-top: 4px;
+}
