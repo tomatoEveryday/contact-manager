@@ -1,0 +1,49 @@
+<html>
+<head>
+	<title>JavaScript Array Functions</title>
+</head>
+<body>
+<script>
+function showArray( arr )
+{
+	for( let i=0; i<arr.length; i++ )
+	{
+		console.log( arr[i] );
+	}
+	console.log("");
+}
+
+const names = ["George","Fred","Suzy","Sally","Samuel","Mona"];
+showArray( names );
+
+names.forEach( element => console.log( "forEach:" + element ) );
+names.forEach( element => {
+	console.log( "forEach:" + element ) 
+});
+
+//const newLength = names.push( "Rick" );
+//showArray( names );
+//console.log( newLength );
+
+//names.unshift( "Sylas" );
+//showArray( names );
+
+//const last = names.pop();
+//console.log( "Popped value: " + last );
+//showArray( names );
+
+//const first = names.shift();
+//console.log( "Removed value:" + first );
+//showArray(names);
+
+//const index = names.indexOf( "Suzy" );
+//console.log( "index:" + index );
+
+const isThere = names.includes( "Suzy" );
+console.log( "isThere:" + isThere );
+
+
+
+</script>
+</body>
+</html>

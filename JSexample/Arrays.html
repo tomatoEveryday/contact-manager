@@ -1,0 +1,52 @@
+<html>
+<head>
+	<title>JavaScript Arrays</title>
+</head>
+<body>
+<script>
+const friends = ["Samuel","Fred","George"];
+console.log( friends );
+
+const years = [1990, 1995, 2020];
+console.log( years );
+
+const months = new Array("January","February","March");
+console.log( months );
+
+const myarray = new Array(7);
+console.log( myarray );
+
+const sixes = new Array(7).fill(6);
+console.log( sixes );
+
+for( let i=0; i<friends.length; i++ )
+{
+	console.log( friends[i] );
+}
+
+for( let i=0; i<friends.length; i++ )
+{
+	console.log( friends.at(i) );
+}
+
+for( let i=0; i>-friends.length; i-- )
+{
+	console.log( friends.at(i) );
+}
+
+friends[2] = "last friend";
+for( let i=0; i<friends.length; i++ )
+{
+	console.log( friends[i] );
+}
+
+const lastName = "Leinecker";
+const rick = ["Rick",lastName,4,5];
+for( let i=0; i<rick.length; i++ )
+{
+	console.log( rick[i] );
+}
+
+</script>
+</body>
+</html>

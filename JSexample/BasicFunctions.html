@@ -1,0 +1,21 @@
+<html>
+<head>
+	<title>Basic JavaScript Functions</title>
+	<script type="text/javascript" src="utility.js"></script>
+</head>
+<body>
+<script>
+	let first = parseInt( Math.random() * 100 );
+	let second = parseInt( Math.random() * 100 );
+
+	let tmp = add( first, second );
+	console.log( `${first}+${second}=${tmp}` );
+	tmp = subtract( first, second );
+	console.log( `${first}-${second}=${tmp}` );
+	tmp = multiply( first, second );
+	console.log( `${first}x${second}=${tmp}` );
+	tmp = divide( first, second );
+	console.log( `${first}÷${second}=${tmp}` );
+</script>
+</body>
+</html>

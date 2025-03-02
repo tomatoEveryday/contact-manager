@@ -1,0 +1,37 @@
+<html>
+<head>
+	<title>JavaScript Function Declarations vs. Expressions</title>
+</head>
+<body>
+<script>
+// Function Declaration
+function calcAge1( birthYear )
+{
+	const age = 2022 - birthYear;
+	return age;
+}
+
+let age1 = calcAge1( 1991 );
+console.log( age1 );
+
+// Function Expression
+const calcAge2 = function ( birthYear )
+{
+	const age = 2022 - birthYear;
+	return age;
+}
+
+let age2 = calcAge2( 1991 );
+console.log( age2 );
+
+// Anonymous Function
+let calcAge3 = (birthYear) => 
+{
+	const age = 2022 - birthYear;
+	return age;
+}
+let age3 = calcAge3( 1991 );
+console.log( age3 );
+</script>
+</body>
+</html>

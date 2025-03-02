@@ -1,0 +1,31 @@
+<html>
+<head>
+	<title>JavaScript Objects</title>
+</head>
+<body>
+<script>
+const secondObject = 
+{ 
+  firstName: "Rick", 
+  lastName: "Leinecker",
+  age: 101,
+  friends: ["George","Fred","Suzy"]
+};
+
+console.log( secondObject.firstName );
+console.log( secondObject.lastName );
+console.log( secondObject.age );
+
+console.log( secondObject['firstName'] );
+console.log( secondObject['lastName'] );
+console.log( secondObject['age'] );
+
+const myobj = {lastName: "Leinecker", firstName: "Rick", favorites: ["Choclate","Gin","Roast Beef"] };
+myobj.location = "Orlando, FL";
+myobj.twitter = "Mad Hatter";
+const jsonobj = JSON.stringify( myobj );
+console.log( jsonobj );
+
+</script>
+</body>
+</html>

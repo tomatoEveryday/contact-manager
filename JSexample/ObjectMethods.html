@@ -1,0 +1,29 @@
+<html>
+<head>
+	<title>JavaScript Object Methods</title>
+</head>
+<body>
+<script>
+const rick =
+{
+  firstName: "Rick",
+  lastName: "Leinecker",
+  birthYear: 1991,
+  job: "Professor",
+  friends: ["Arnold","Sylvester","Bruce"],
+  hasDriversLicense: true,
+  calcAge: function()
+  {
+	this.age = 2022 - this.birthYear;
+	return this.age;
+  }
+};
+
+const retValue = rick.calcAge();
+console.log( retValue );
+console.log( rick.age );
+
+
+</script>
+</body>
+</html>
